@@ -13,7 +13,6 @@ let valueInNumber = Number(score); //now the score will be converted into number
 
 //if user enter "33abc" inside score, then it will be converted to NaN (not a number) whose type is number and will get stored inside valueInNumber
 console.log(valueInNumber);
-console.log(score);
 console.log(typeof(valueInNumber));
 
 /*
@@ -24,9 +23,9 @@ console.log(typeof(valueInNumber));
 
 console.log("NEXT CONVERSION")
 
-// let isLoggedIn = 1;
+let isLoggedIn = 1;
 // let isLoggedIn = "";
-    let isLoggedIn = "harsh";
+    // let isLoggedIn = "harsh";
 
 let booleanIsLoggedIn = Boolean(isLoggedIn);
 console.log(booleanIsLoggedIn);
