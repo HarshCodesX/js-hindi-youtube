@@ -2,6 +2,7 @@
 //7 types: string, number, boolean, null, undefined, symbol, bigInt
 const score = 100;
 const scoreValue = 100.3;
+let strValue = "harsh";
 
 const isLoggedIn = false;
 const outsideTemp = null;
