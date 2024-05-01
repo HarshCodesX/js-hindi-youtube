@@ -34,3 +34,11 @@ console.log(anotherString);
 const newStringOne = "    harsh    ";
 console.log(newStringOne);
 console.log(newStringOne.trim());
+
+//another function
+const url = "https://harsh.com/harsh%20gupta";
+console.log(url.replace('%20','-'));
+
+console.log(url.includes('harsh'));
+
+console.log(gameName.split('-'));
