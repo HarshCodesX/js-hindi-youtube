@@ -48,6 +48,7 @@ const returnedObj = {...obj1, ...obj2};
 
 
 //************************ANOTHER METHOD*********************** */
+
 const users = [
     {
         id: 1,
@@ -65,4 +66,18 @@ const users = [
     },
 ]
 
-users[1].email
+console.log(users[1].email);
+
+
+//************FEW METHODS**************** */
+console.log(tinderUser);
+
+console.log(Object.keys(tinderUser));
+//it returns the data in form of array, i.e it took all the keys and put it inside an array
+
+console.log(Object.values(tinderUser));
+
+console.log(Object.entries(tinderUser));
+//returns an array of arrays (each key value pair inside an array)
+
+console.log(tinderUser.hasOwnProperty("isLoggedIn"));
