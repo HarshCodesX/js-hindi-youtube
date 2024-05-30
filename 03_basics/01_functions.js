@@ -6,7 +6,7 @@ function sayMyName(){
     console.log("h");
 }
 
-// console.log(sayMyName); //this is known as reference of function
+console.log(sayMyName); //this is known as reference of function
 
 sayMyName(); //execution of function
 console.log(sayMyName());
