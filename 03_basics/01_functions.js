@@ -48,3 +48,26 @@ function subtractTwoNumbers(number1, number2){
 
 const return_result = subtractTwoNumbers(10, 5);
 console.log(return_result);
+
+// ******************WE CAN ALSO WRITE ABOVE FUNCTIN AS ************************
+
+function subtractTwoNumbers(number1, number2){
+    return number1 - number2;
+}
+
+const Finalresult = subtractTwoNumbers(20, 10);
+console.log(Finalresult);
+
+// *******************ANOTHER NEW FUNCTION **********************
+
+function loginUserMessage(username = "sam"){
+    if(!username){
+        console.log("please enter your name");
+        return;
+    }
+    return `${username} just logged in`
+}
+
+// console.log(loginUserMessage("harsh"));
+// console.log(loginUserMessage(""));
+console.log(loginUserMessage(""));
