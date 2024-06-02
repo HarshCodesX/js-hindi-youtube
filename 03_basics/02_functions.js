@@ -19,19 +19,19 @@ function handleObject(anyobject){
     console.log(`username is ${anyobject.username} and price is ${anyobject.price}`);
 }
 
-// 2 ways to call thr above function that takes object
-// handleObject(user)
+// 2 ways to call the above function that takes object
+handleObject(user)
 handleObject({
     username: "sam",
     price: 299
 })
 
 //HOW TO PASS ARRAY IN FUNCTION
-// const myNewArray = [200, 400, 100, 600];
+const myNewArray = [200, 400, 100, 600];
 
 function returnSecondValue(getArray){
     return getArray[1];
 }
 
-// console.log(returnSecondValue(myNewArray));
+console.log(returnSecondValue(myNewArray));
 console.log(returnSecondValue([200, 1000, 9000, 1500]));
