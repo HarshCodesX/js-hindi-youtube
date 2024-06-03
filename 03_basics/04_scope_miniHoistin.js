@@ -22,14 +22,16 @@ if(true){
 // console.log(username); //this will cause error
 
 // ************************INTERESTING ***************************************************
-console.log(addone(101));
+console.log(addone(101)); //this wont give error
 function addone(num){
     const final_res = num + 1;
     return final_res;
 }
 
 // ****************Another way**********************
-console.log(addTwo(5));
+
+console.log(addTwo(5)); //this will give error
+
 const addTwo = function(random_number){
-    return random_number = random_number + 2;
+    return random_number + 2;
 }
