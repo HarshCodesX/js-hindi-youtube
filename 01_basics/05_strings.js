@@ -37,7 +37,7 @@ console.log(newStringOne.trim());
 
 //another function
 const url = "https://harsh.com/harsh%20gupta";
-console.log(url.replace('%20','-'));
+console.log(url.replace("%20","-"));
 
 console.log(url.includes('harsh'));
 
