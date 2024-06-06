@@ -7,14 +7,16 @@ const user = {
     }
 }
 // user.welcomeMessage();
-user.username = "sam";
+// user.username = "sam";
 // user.welcomeMessage();
 
-// console.log(this)
+// console.log(this) //inside node environment, here "this refers to an empty object or we can say it refer to a global object"
+// but when we run this console.log(this) statement inside browser, then it will refer to thr global object which is "Window"
 
 function chai(){
     let username = "harsh";
-    console.log(this.username);
+    console.log(this.username);  //outputs: undefined
+    console.log(this); //prints the global object and many more things
 }
 // chai() //concept of context only work inside objects
 
@@ -32,7 +34,7 @@ const drinks = () => {
     console.log(this);
 }
 
-// drinks();
+drinks();
 
 // *************more about arrow function***********
 () => {}
@@ -50,4 +52,4 @@ const drinks = () => {
 //what if we want to return an object
 const addTwo = (num1, num2) => ({username: "harsh"});
 
-console.log(addTwo(3,4)); //while calling line number 51, here arguments passed are of no use as we are printing object which contains string
+// console.log(addTwo(3,4)); //while calling line number 51, here arguments passed are of no use as we are printing object which contains string
