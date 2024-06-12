@@ -44,10 +44,10 @@ for (const [key, value] of map) {
 
 // **************for of loop on object*********************
 const myObject = {
-    "game1" : "NFS",
-    "game2" : "spiderman"
+    game1 : "NFS",
+    game2 : "spiderman"
 }
 
-for (const [key, value] of myObject) {
-    console.log(key, ":-", value); //will throw error that myObject is not iterable as we cant iterate it with for of loop, there are atoher methods
-}
+// for (const [key, value] of myObject) {
+    // console.log(key, ":-", value); //will throw error that myObject is not iterable as for of loop is not working here, but there are different methods 
+// }
