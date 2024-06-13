@@ -36,7 +36,7 @@ for (let index = 1; index < 20; index++) {
 }
 
 // *********************NEW ONE (ABOUT CONTINUE)*****************************
-for (let index = 1; index < 20; index++) {
+for (let index = 1; index <= 20; index++) {
     if (index == 5) {
         console.log("detected 5");
         continue;
