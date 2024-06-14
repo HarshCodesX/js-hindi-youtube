@@ -4,6 +4,7 @@ coding.forEach(function (val){
     // console.log(val);
 })
 
+//using arrow function
 coding.forEach( (item) => {
     // console.log(item);
 } )
@@ -36,5 +37,5 @@ const myCoding = [
 ]
 
 myCoding.forEach( (item) => {
-    console.log(item.languageFilename);
+    // console.log(item.languageName);
 } )
