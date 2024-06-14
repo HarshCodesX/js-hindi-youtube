@@ -22,7 +22,7 @@ for (const greet of greetings) {
 // **************************MAPS****************************
 
 //Maps (map is a object in itself)
-// Map is an object that holds key valle pairs and remember the orignal insertion of the keys (i.e remember the order in which key value pair was inserted)
+// Map is an object that holds key value pairs and remember the orignal insertion of the keys (i.e remember the order in which key value pair was inserted)
 // It is unique which means there is no duplicate value inside a map
 
 const map = new Map();
@@ -34,12 +34,12 @@ map.set("IN", "India"); //we have entered india again, but this will not be cons
 // console.log(map);
 
 for (const key of map) {
-    console.log(key); //it will provide us array of key value pair, each key value pair will make a separate array
+    // console.log(key); //it will provide us array of key value pair, each key value pair will make a separate array
 }
 
 // to destructure that array, we can use this syntax
 for (const [key, value] of map) {
-    console.log(key, ":-", value)
+    // console.log(key, ":-", value)
 }
 
 // **************for of loop on object*********************
@@ -48,6 +48,6 @@ const myObject = {
     game2 : "spiderman"
 }
 
-// for (const [key, value] of myObject) {
-    // console.log(key, ":-", value); //will throw error that myObject is not iterable as for of loop is not working here, but there are different methods 
-// }
+for (const [key, value] of myObject) {
+    console.log(key, ":-", value); //will throw error that myObject is not iterable as for of loop is not working here, but there are different methods 
+}
