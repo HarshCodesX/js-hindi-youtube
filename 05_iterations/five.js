@@ -22,6 +22,19 @@ coding.forEach((item, index, arr) => {
 // **********************NEW ONE*****************************
 const myCoding = [
     {
-        languageName
+        languageName: "javascript",
+        languageFilename: "js"
+    },
+    {
+        languageName: "java",
+        languageFilename: "java"
+    },
+    {
+        languageName: "python",
+        languageFilename: "py"
     }
 ]
+
+myCoding.forEach( (item) => {
+    console.log(item.languageFilename);
+} )
