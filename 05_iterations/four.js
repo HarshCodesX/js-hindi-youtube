@@ -9,12 +9,12 @@ const myObject = {
 }
 
 for (const key in myObject) {
-    // console.log(key); //rpints the keys
+    // console.log(key); //prints the keys
     // console.log(myObject[key]); //prints the values
     // console.log(`${key} is shortcut for ${myObject[key]}`);
 }
 
-// *************************8APPLYING forin LOOP ON ARRAY*******************************
+// *************************APPLYING forin LOOP ON ARRAY*******************************
 const programming = ["js", "rb", "py", "java", "cpp"];
 for (const key in programming) {
     // console.log(key);
