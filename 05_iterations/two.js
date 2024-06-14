@@ -13,7 +13,7 @@ let myArray = ["flash", "batman", "superman"];
 let arr = 0;
 while (arr < myArray.length) {
     // console.log(`value is ${myArray[arr]}`);
-    arr += 1;
+    arr += 1; //arr = arr + 1
 }
 
 // ************************DO WHILE LOOP***************************
@@ -26,6 +26,6 @@ do {
 
 let number = 11;
 do {
-    console.log(`number is ${number}`); //it will print number once and after checking condition, it will come out of the loop
+    // console.log(`number is ${number}`); //it will print number once and after checking condition, it will come out of the loop
     number++;
 } while (number<=10);
