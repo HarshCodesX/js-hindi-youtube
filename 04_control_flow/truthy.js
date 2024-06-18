@@ -32,8 +32,10 @@ if(Object.keys(emptyObj).length === 0){ //as "Object.keys(pass object here)" ret
 let val1;
 // val1 = 5 ?? 10;
 // val1 = null ?? 10;
-val1 = undefined ?? 15;
+// val1 = undefined ?? 15;
 // val1 = null ?? 10 ?? 20; //in this case it will take the first value after null or undefined, like it took 10 here
+// val1 = null ?? undefined; //outputs undefined
+// val1 = undefined ?? null; //outputs: null
 
 console.log(val1);
 
