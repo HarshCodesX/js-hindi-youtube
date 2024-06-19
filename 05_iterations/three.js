@@ -33,7 +33,7 @@ map.set("IN", "India"); //we have entered india again, but this will not be cons
 
 // console.log(map);
 
-for (const key of map) {
+for (const harshh of map) {
     // console.log(key); //it will provide us array of key value pair, each key value pair will make a separate array
 }
 
