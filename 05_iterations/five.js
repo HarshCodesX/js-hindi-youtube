@@ -13,7 +13,7 @@ coding.forEach( (item) => {
 function printMe(item){
     // console.log(item);
 }
-coding.forEach(printMe); //here reference of the function has to be passed like this "printMe" instead of calling the function liek this "printMe()""
+coding.forEach(printMe); //here reference of the function has to be passed like this "printMe" instead of calling the function like this "printMe()""
 
 // *****************NEW ONE*********************
 coding.forEach((item, index, arr) => {
@@ -37,5 +37,5 @@ const myCoding = [
 ]
 
 myCoding.forEach( (item) => {
-    // console.log(item.languageName);
+    console.log(item.languageName);
 } )
