@@ -1,7 +1,7 @@
 const coding = ["js", "ruby", "java", "python", "cpp"];
 const values = coding.forEach( (item) => {
     // console.log(item);
-    // return item; //it wont return even if we write this statement
+    return item; //it wont return even if we write this statement
 } );
 // console.log(values); //forEach does not return anything, therefore it will print undefined
 
@@ -41,21 +41,22 @@ const books =[
 
 // FINDING BOOKS WITH GENRE AS HISTORY
 // let userBooks = books.filter( (bk) => {
-//     bk.genre === "History";
+//     return bk.genre === "History";
 // } );
 
 // userBooks = books.filter( (bk) => bk.genre === "History" ); //implicit return
 // console.log(userBooks);
 
-//FINDING BOOKS WITH PUBLISH YEAR GREATER THAN EQUAL TO 2000
-userBooks = books.filter( (bk) => {
-    return (bk.publish >= 1995);
-} );
+//FINDING BOOKS WITH PUBLISH YEAR GREATER THAN EQUAL TO 1995
+// userBooks = books.filter( (bk) => {
+//     return (bk.publish >= 1995);
+// } );
 
-userBooks = books.filter( (bk) => bk.publish >= 2000 ); //if we want to write abive code as implicit return
-userBooks = books.filter( (bk) => { return (bk.publish >= 2000)} ); //as we have opened scope here {}, i.e we have to use return keyword
+// FINDING BOOKS WITH PUBLISH YEAR GREATER THAN EQUAL TO 2000
+// userBooks = books.filter( (bk) => bk.publish >= 2000 ); //if we want to write abive code as implicit return
+// userBooks = books.filter( (bk) => { return (bk.publish >= 2000)} ); //as we have opened scope here {}, i.e we have to use return keyword
 
-//NOW IF WE WANT TO PRINT BOOK WHICH WER EPUBLISHED AFTER 1995 AND BELONGS TO HISTORY GENRE
+// NOW IF WE WANT TO PRINT BOOK WHICH WER EPUBLISHED AFTER 1995 AND BELONGS TO HISTORY GENRE
 userBooks = books.filter( (bk) => {
     return (bk.publish >= 1995 && bk.genre === "History");
 } );
