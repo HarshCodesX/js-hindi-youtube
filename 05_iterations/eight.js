@@ -8,7 +8,7 @@ const myTotal = myNums.reduce(function (acc,currval){
 // ****************WRITING ABOVE FUNCTION AS ARROW FUNCTION*********************
 
 const Total = myNums.reduce( (acc,currval) => acc+currval, 0 );
-console.log(`value of Total is ${Total}`);
+// console.log(`value of Total is ${Total}`);
 
 // ****************NEW EXAMPLE****************
 const shoppingCart = [
