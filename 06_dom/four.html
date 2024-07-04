@@ -19,6 +19,10 @@
     addLanguage("python");
     addLanguage("typescript");
 
+    //now here we only have a single value which is "javascript", and when we ask it to appendChild and add innerHTML,
+    // it have to travserse the whole tree as it have to append child at the end amd what if there were 1 lakh "li", 
+    //then it would be unoptimized
+    
     // **********optimized way to write the above function***********
     function addOptiLanguage(langName){
         const li = document.createElement("li");
