@@ -106,7 +106,7 @@ function validateGuess(guess) {
     alert('Please enter a number less than 100');
   } else {
     prevGuess.push(guess);
-    if (numGuess === 11) {
+    if (numGuess === 10) {
       displayGuess(guess);
       displayMessage(`Game Over, Random number was ${randomNumber}`);
       endGame();
@@ -145,7 +145,7 @@ function endGame() {
   p.classList.add('button');
   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
   startOver.appendChild(p);
-  playGame = flase;
+  playGame = false;
   newGame();
 }
 
@@ -156,10 +156,11 @@ function newGame() {
     prevGuess = [];
     numGuess = 0;
     guessSlot = '';
-    remaining.innerHTML = `${11 - numGuess}`;
+    remaining.innerHTML = `${10 - numGuess}`;
     userInput.removeAttribute('disabled');
     startOver.removeChild(p);
     playGame = true;
   });
 }
+
 ```
