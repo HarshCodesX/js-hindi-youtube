@@ -75,8 +75,8 @@ setInterval(function () {
 
 ## project 4 solution code
 ```javascript
-
 let randomNumber = parseInt(Math.random() * 100 + 1);
+console.log(randomNumber);
 
 const submit = document.querySelector('#subt');
 const userInput = document.querySelector('#guessField');
@@ -111,7 +111,6 @@ function validateGuess(guess) {
   } else {
     prevGuess.push(guess);
     if (numGuess === 11) {
-      displayGuess(guess);
       displayMessage(`Game Over. Random number was ${randomNumber}`);
       endGame();
     } else {
