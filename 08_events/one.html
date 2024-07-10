@@ -32,13 +32,68 @@
     // for interview perspective: clientX, clientY, screenX, screenY
     //altkey, ctrlkey, shiftkey, keyCode
 
-    document.getElementById('images').addEventListener("click", function(e){
-        console.log("clicked inside the ul");
+
+    // **************CONCEPT OF EVENT BUBBLING **********
+
+    // document.getElementById('images').addEventListener("click", function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener("click", function(e){
+    //     console.log("owl clicked");
+    // }, false)
+
+    // ************** CONCEPT OF EVENT CAPTURING *******************
+
+    // document.getElementById('images').addEventListener("click", function(e){
+    //     console.log("clicked inside the ul");
+    // }, true)
+
+    // document.getElementById('owl').addEventListener("click", function(e){
+    //     console.log("owl clicked");
+    // }, true)
+
+    // ******************* SOMETIMES IF WE DONT WANT BUBLING OF THE EVENT DUE TO SOME REASONS *********************8
+
+    // document.getElementById('images').addEventListener("click", function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener("click", function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation(); //stops the propagation
+    // }, false)
+
+    // *********** NOW LET'S STOP THE DEFAULT BEHAVIOUR OF THE LAST "li" IN WHICH WE HAVE ANCHOR TAG *******************
+
+    document.getElementById('google').addEventListener("click", function(e){
+        e.preventDefault();
     }, false)
 
-    document.getElementById('owl').addEventListener("click", function(e){
-        console.log("owl clicked");
-    }, false)
+    // **************************IF WE WANT TO MAKE THE IMAGE DISAPPEAR AFTER CLICKING ON THAT IMAGE*************************
+
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log(e.target.parentNode);
+    //     let removeIt = e.target.parentNode;
+    //     removeIt.remove();
+        // another way to remove: removeIt.parentNode.removeChildNode(removeIt);
+    // })
+
+    // IF WE CLICK ON ANY BULLET OR LIST ITEM DOT, THEN WHOLE SCREEN WILL BE CLEARED
+    // as e.target.parentNode will be ul 
+    //then we have written "let removeIt = e.target.parentNode" i.e ul will be stored inside the removeIt
+    //removeIt.remove(), therefore all the li will be deleted or removed
+
+    //SOLUTION TO IT
+    document.querySelector('#images').addEventListener("click", function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === "IMG" || e.target.tagName === "A"){
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
+    })
+
+
 
 </script>
 </html>
