@@ -12,17 +12,31 @@
             <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
             <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
-            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" onclick="alert('owl clicked')"></li>
+            <!-- but this approach is not good, but the style in which we have written this event, this is not feasible approach, when our application will scale, we will face alot of problems with our application -->
+
             <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
             <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
         </ul>
     </div>
 </body>
 <script>
-    // document.getElementById("owl").onclick = function(){
-    //     alert("owl clicked");
-    // }
+    document.getElementById("owl").onclick = function(){
+        alert("owl clicked");
+    }
+    //problem with this approach: as we are applying on click event on an id, there can be some problems with onclick as we dont get much information
+    //we shoul actually use EventListeners, because they not only provide onclick functionality but also provide the ability of propagation
 
+
+    //another and best approach
+    document.getElementById('owl').addEventListener("click", function(e){
+        alert("owl clicked by best approach");
+    }, false)
+
+    //this 3rd parameter "false", is a deafult parameter, so we can write it or not, its up to you, but sometimes some application require this 3rd parameter and without this 3rd parameter those application can not be completed
+
+    //older methods used before onclick
     //attachEvent()
     //jQuery - on
 
@@ -32,37 +46,59 @@
     // for interview perspective: clientX, clientY, screenX, screenY
     //altkey, ctrlkey, shiftkey, keyCode
 
+    // *************EVENT OBJECT **********************
+
+    document.getElementById('owl').addEventListener("click", function(e){
+        console.log(e);
+    })
+
+    //we get a pointer event and it is a object, and inside we get many events such as browser events and environment events
+
+    // some more events
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altKey, ctrlKey, shiftKey, keyCode
+
+    //event propagation
+    // there are 2 context of event propagation
+    // one is event bubbling and other is event capturing
+
 
     // **************CONCEPT OF EVENT BUBBLING **********
 
-    // document.getElementById('images').addEventListener("click", function(e){
-    //     console.log("clicked inside the ul");
-    // }, false)
+    document.getElementById('images').addEventListener("click", function(e){
+        console.log("clicked inside the ul");
+    }, false)
 
-    // document.getElementById('owl').addEventListener("click", function(e){
-    //     console.log("owl clicked");
-    // }, false)
+    document.getElementById('owl').addEventListener("click", function(e){
+        console.log("owl clicked");
+    }, false)
+
+    //bottom to top
 
     // ************** CONCEPT OF EVENT CAPTURING *******************
 
-    // document.getElementById('images').addEventListener("click", function(e){
-    //     console.log("clicked inside the ul");
-    // }, true)
+    document.getElementById('images').addEventListener("click", function(e){
+        console.log("clicked inside the ul");
+    }, true)
 
-    // document.getElementById('owl').addEventListener("click", function(e){
-    //     console.log("owl clicked");
-    // }, true)
+    document.getElementById('owl').addEventListener("click", function(e){
+        console.log("owl clicked");
+    }, true)
+
+    //top to bottom
 
     // ******************* SOMETIMES IF WE DONT WANT BUBLING OF THE EVENT DUE TO SOME REASONS *********************8
 
-    // document.getElementById('images').addEventListener("click", function(e){
-    //     console.log("clicked inside the ul");
-    // }, false)
+    document.getElementById('images').addEventListener("click", function(e){
+        console.log("clicked inside the ul");
+    }, false)
 
-    // document.getElementById('owl').addEventListener("click", function(e){
-    //     console.log("owl clicked");
-    //     e.stopPropagation(); //stops the propagation
-    // }, false)
+    document.getElementById('owl').addEventListener("click", function(e){
+        console.log("owl clicked");
+        e.stopPropagation(); //stops the propagation
+    }, false)
 
     // *********** NOW LET'S STOP THE DEFAULT BEHAVIOUR OF THE LAST "li" IN WHICH WE HAVE ANCHOR TAG *******************
 
@@ -72,12 +108,12 @@
 
     // **************************IF WE WANT TO MAKE THE IMAGE DISAPPEAR AFTER CLICKING ON THAT IMAGE*************************
 
-    // document.querySelector('#images').addEventListener('click', function(e){
-    //     console.log(e.target.parentNode);
-    //     let removeIt = e.target.parentNode;
-    //     removeIt.remove();
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode);
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
         // another way to remove: removeIt.parentNode.removeChildNode(removeIt);
-    // })
+    })
 
     // IF WE CLICK ON ANY BULLET OR LIST ITEM DOT, THEN WHOLE SCREEN WILL BE CLEARED
     // as e.target.parentNode will be ul 
