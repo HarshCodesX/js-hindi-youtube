@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    let returnId;
+    // const sayName = function(){
+    //     console.log("harsh");
+    // }
+    // setInterval(sayName, 1000);
+
+    // ************WE CAN ALSO PASS STRING**************8
+    const sayName = function(str){
+        console.log(str);
+    }
+    // const intervalId = setInterval(sayName, 1000, "hello");
+
+    //****************now how to stop this continous printing*****************
+    // clearInterval(intervalId);
+
+    // printing using start button and stop printing using stop button
+    document.querySelector('#start').addEventListener('click', function(){
+        returnId = setInterval(sayName, 1000, "hello harsh");
+    })
+
+    document.querySelector('#stop').addEventListener("click",function(){
+        clearInterval(returnId);
+    })
+
+</script>
+</html>
