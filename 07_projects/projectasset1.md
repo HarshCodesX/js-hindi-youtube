@@ -169,7 +169,7 @@ function newGame() {
 ```
 
 ## project 4 another solution
-```
+```javascript
 let randomNumber = parseInt(Math.random() * 100 + 1);
 console.log(randomNumber);
 
@@ -265,6 +265,30 @@ function newGame() {
     playGame = true;
   });
 }
+```
+
+### Porject 5 solution code
+```javascript
+const insert = document.getElementById('insert');
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+    <i=div class = "color">
+    <table>
+    <tr>
+      <th>Key</th>
+      <th>KeyCode</th>
+      <th>Code</th>
+    </tr>
+    <tr>
+      <td>${e.key === ' ' ? 'space' : e.key}</td>
+      <td>${e.keyCode}</td>
+      <td>${e.code}</td>
+    </tr>
+  </table>
+    </div>
+  `;
+});
+
 ```
 
 ### Project 6 solution code
