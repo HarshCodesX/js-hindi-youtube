@@ -16,12 +16,16 @@
     const requestURL = "https://api.github.com/users/HarshCodesX";
     const xhr = new XMLHttpRequest();
     xhr.open('GET', requestURL); //here state changed to 1
+    console.log(xhr.readyState);
     
     //continously tracking the state
     xhr.onreadystatechange = function(){
         console.log(xhr.readyState); //as many time state is changing, function is also being called again n again
         if(xhr.readyState === 4){
-            console.log(responseText);
+            const data = JSON.parse(this.responseText);
+            console.log(data);
+            console.log(typeof data); //most of the time data is received in the form of string
+            console.log(data.followers);
         }
 
     }
