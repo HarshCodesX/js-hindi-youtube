@@ -8,13 +8,13 @@ const user = {
     getUserDetails: function(){
         console.log("Got user details from database");
         console.log(`username: ${this.username}`);
-        console.log(this);
+        console.log(this); //it will print the current context
     }
 }
 
 // console.log(user.username);
-// console.log(user.getUserDetails());
-// console.log(this);
+console.log(user.getUserDetails());
+// console.log(this); //outputs: {}
 
 // ***************constructor function****************
 
@@ -31,4 +31,4 @@ const userTwo = new User("ChaiAurCode", 12, false);
 // console.log(userOne);
 // console.log(userTwo);
 
-console.log(userOne.constructor);
+// console.log(userOne.constructor);
