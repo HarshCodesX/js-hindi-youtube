@@ -15,7 +15,12 @@
             this.server = "https://localhost:3000/";
 
             //requirement
-
+            document.querySelector('buttton').addEventListener('click', this.handleClick);
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+            console.log(this.library);
         }
     }
 
