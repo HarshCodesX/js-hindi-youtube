@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // const person = {
+//     name: "john",
+//     greet: function(){
+//         console.log(`Hello, my name is ${this.name}`);
+//     }
+// };
+//  const anotherPerson = {
+//     name: "jane",
+// };
+
+// const greetJane = person.greet.bind(anotherPerson);
+// greetJane();
+
+//ANOTHER WAY OF DONG ABOVE 
+// const person = {
+//     name: "john",
+//     greet: function(){
+//         console.log(`Hello, my name is ${this.name}`);
+//     }
+// };
+
+// const anotherPerson = {
+//     name: "jane",
+//     greetjane: function(){
+//         const boundGreet = person.greet.bind(this); // `this` refers to anotherPerson, (instead of "this", we can also write anotherPerson directly)
+//         boundGreet(); // Call the bound function
+//     }
+// };
+
+// anotherPerson.greetjane(); // Outputs: Hello, my name is jane
+
+
+//another example (preset arguments with bind)
+//we will be creating a new function that always add 5 to its arguments
+
+// function add(a,b){
+//     return a+b;
+// }
+
+// const addFive = add.bind(null, 5);
+// console.log(addFive(10));
+//here we used "bind", to create a new function "addFive" where the first argument is always set to 5
+
+// **********PRACTICAL EXAMPLE OF BIND******************* */
+
+// const user = {
+//     name: "Alice",
+//     getName: function(){
+//         console.log(this.name);
+//     }
+// };
+
+// const button = document.createElement("button");
+// button.textContent = "show name";
+
+// button.onclick = user.getName.bind(user);
+// document.body.appendChild(button);
+</script>
+</html>
