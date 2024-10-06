@@ -39,9 +39,9 @@ arr[10] = 11; //pushing 11 on 10th position of array
 
 
 
-console.log(arr); //we will see some empty spaces here inside this array, and these empty spaces i.e holes made our array less optimized
-console.log(arr.length);
-console.log(arr[9]); //it will print undefined, and this undefined here is a very costly operation
+// console.log(arr); //we will see some empty spaces here inside this array, and these empty spaces i.e holes made our array less optimized
+// console.log(arr.length);
+// console.log(arr[9]); //it will print undefined, and this undefined here is a very costly operation
 
 
 
@@ -49,7 +49,56 @@ console.log(arr[9]); //it will print undefined, and this undefined here is a ver
 
 //lets see how does array find any value at a particular index
 
-//1) whenever we want to access any value from array, the first thing to happen is bound check
+//1) Bound check - whenever we want to access any value from array, the first thing to happen is bound check
 //Bound Check - it is the easiest step, that array is starting from this position, this is the length, and ending here, 
 //and if the user asks something out of the array, then quicky respond back that you are aksing out of bound value and return undeifned
 
+//2)hasOwnProperty(arr, 9)- when we asked arr[9], it passed the bound check as it is inside the bound so we will check at that particular index
+//if there is a value, it will be returned, but here we dont have any value so undefined is received
+
+//3) //hasOwnProperty(arr.prototype, 9) - Therefore we again have to check, and here we will check inside the prototype of arr array 
+
+//4) hasOwnProperty(Object.prototype, 9) - now as we know js has a prototypal behaviour, as it continously keeps on checking, and as 
+//we know js array are also objects, therefore we will check inside the Object prototype by saying that you might have introduced
+//such property inside Object prototype
+
+
+//therefore, we say, holes are very expensive operation in javascript
+
+
+
+
+
+const arrTwo = [1, 2, 3, 4, 5];
+// console.log(arrTwo[8]); //returns undefined as it is an out of bound value
+// console.log(arrTwo[2]); //here it will return the value as it is in bound check
+
+
+
+
+// SMI > Double > Packed
+// H_SMI > H_Double > H_Packed
+
+//once downgraded, upgrading back to its previous type is nearly impossible
+
+//if we made array by this method, let's see what happens
+const arrThree = new Array(3);
+console.log(arrThree); //we get a H_SMI_Elements, and i wont be calling it holey or packed elements, because values havent been added
+//so js will try to optimize it as much as possible
+
+arrThree[0] = "1"; //it directly went from H_SMI_Elements to H_Packed
+arrThree[1] = "2"; //H_Packed
+arrThree[2] = "3"; //H_Packed
+
+//we can use a better approach, to optimize this, instead of declaring array like that we can declare array like this
+const arrFour = []; //SMI_Elements
+arrFour.push("1"); //Packed_Elements
+arrFour.push("2"); //Packed_Elements
+arrFour.push("3"); //Packed_Elements
+
+
+
+
+const arrFive = [1, 2, 3, 4, 5]; //SMI
+arrFive.push(NaN); //Packed_Double
+arrFive.push(Infinity); //Packed_Double
